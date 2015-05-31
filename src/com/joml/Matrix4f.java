@@ -2226,4 +2226,34 @@ public class Matrix4f implements Serializable, Externalizable {
         return rotate(angle, axis.x, axis.y, axis.z);
     }
 
+    /**
+     * Return the specified {@link Matrix4f}.
+     * <p>
+     * This method exists to switch the matrix subsequent calls operate on when using
+     * method chaining in fluent interface style.
+     * 
+     * @param other
+     *          the {@link Matrix4f} to return
+     * @return that matrix
+     */
+    public Matrix4f with(Matrix4f other) {
+        return other;
+    }
+
+    /**
+     * Return the specified {@link Matrix4f}.
+     * <p>
+     * This method mainly exists for symmetry with operation chaining when using the
+     * {@link #with(Matrix4f)} instance call in a fluent interface style.
+     * <p>
+     * It purposely breaks with Java's camelCase naming convention.
+     * 
+     * @param other
+     *          the {@link Matrix4f} to return
+     * @return that matrix
+     */
+    public static Matrix4f With(Matrix4f other) {
+        return other;
+    }
+
 }
